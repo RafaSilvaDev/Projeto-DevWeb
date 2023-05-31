@@ -17,7 +17,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
      <td align="center">
       <a href="https://github.com/RafaSilvaDev">
-        <img src="https://avatars.githubusercontent.com/u/70549168?v=4" width="100px;" alt=""/><br>
+        <img src="https://avatars.githubusercontent.com/u/73250106?v=4" width="100px;" alt=""/><br>
         <sub>
           <b>Rafael Barbosa da Silva </b>
         </sub>
