@@ -1,0 +1,79 @@
+@use "imports";
+
+@mixin displayflex($direction, $align, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+main {
+  @include displayflex(column, center, center);
+  background: url("../img/bg1.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+
+  .login-container {
+    @include displayflex(column, center, space-around);
+    height: 550px;
+    width: 436px;
+    background-color: #fff;
+    padding: 40px;
+
+    img {
+      height: 100px;
+    }
+
+    #login-form {
+      @include displayflex(column, center, space-evenly);
+      height: 200px;
+      width: 100%;
+
+      .value-input,
+      #submit-btn {
+        width: 100%;
+      }
+
+      .value-input {
+        padding: 10px 5px;
+        margin: 10px 0;
+        border: 4px solid imports.$color-green;
+        border-radius: 6px;
+      }
+
+      #submit-btn {
+        padding: 16px;
+        border: none;
+        border-radius: 60px;
+        background-color: imports.$color-green;
+        color: imports.$color-white;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    
+    .panel-link {
+      margin-top: 10px;
+      text-decoration: none;
+      color: imports.$color-green;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    .login-container {
+      width: 100vw;
+      height: 100vh;
+
+      img {
+        height: 100px;
+      }
+    }
+  }
+}

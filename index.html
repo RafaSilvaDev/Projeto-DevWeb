@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/login.css">
+    <title>Natureza Viva | Login</title>
+</head>
+
+<body>
+    <main class="landing">
+        <div class="login-container">
+            <img src="./img/Vector_Login.png" alt="Natureza Viva Logo">
+            <form action="#" method="post" id="login-form">
+                <input class="value-input" type="text" name="user" placeholder="Usuário" required>
+                <input class="value-input" type="password" name="password" placeholder="Senha" required>
+                <select name="tipo-de-usuario" id="user-type" class="value-input" required>
+                    <option value="null" disabled selected>-- Selecione --</option>
+                    <option value="cli">Cliente</option>
+                    <option value="adm">Proptietário</option>
+                </select>
+
+                <input type="submit" name="submit" id="submit-btn" value="LOG IN" />
+            </form>
+            <a href="./pages/SignUp.html" class="panel-link">Esqueceu sua senha?</a>
+        </div>
+    </main>
+</body>
+
+</html>
