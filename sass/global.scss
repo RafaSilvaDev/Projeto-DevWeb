@@ -1,11 +1,22 @@
 $color-green: #1D4834;
-$color-white: #fff;
+$color-white: #ffff;
+$color-black: #000;
+$color-grey: #d9d9d9;
 $color-brown: #523f38;
 $color-yellow: #f0f66e;
 $color-orange: #f28123;
+$color-red: #ff0000;
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+header{
+    height: 80px;
+    padding: 0 20px;
+    img {
+        height: 90%;
+    }
 }

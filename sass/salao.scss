@@ -1,0 +1,90 @@
+@use "imports";
+
+@mixin displayflex($direction, $align, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+main {
+  margin: 10px 100px;
+
+  .title {
+    padding: 18px 0;
+  }
+
+  .pictures {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    height: 500px;
+    width: 100%;
+  }
+
+  @for $img from 1 to 5 {
+    .img#{$img} {
+      border-radius: 20px;
+      background-position: center !important;
+      background-size: cover !important;
+      background-repeat: no-repeat !important;
+    }
+  }
+
+  .img1 {
+    grid-area: 1 / 1 / 7 / 5;
+    background: url("../img/vista-salao.jpg");
+  }
+  .img2 {
+    grid-area: 1 / 5 / 4 / 9;
+    background: url("../img/area-externa-salao.jpg");
+  }
+  .img3 {
+    grid-area: 4 / 5 / 7 / 7;
+    background: url("../img/sala-privativa-salao.jpg");
+  }
+  .img4 {
+    grid-area: 4 / 7 / 7 / 9;
+    background: url("../img/mesa-salao.jpg");
+  }
+
+  .about{
+    @include displayflex(row, start, space-between);
+    margin: 60px 0;
+
+    .reserve{
+       form {
+        height: 200px;
+        width: 300px;
+        padding: 20px;
+        border-radius: 16px;
+        @include displayflex(column, center, center);
+        background-color: imports.$color-grey;
+
+        label,
+        input{
+            width: 100%;
+        }
+
+        input{
+            height: 40px;
+            border-radius: 16px;
+            border: none;
+        }
+
+        #date {
+            margin-bottom: 20px;
+            padding: 0 10px;
+            border: 1px solid imports.$color-black;
+        }
+
+        #btn-submit {
+            background-color: imports.$color-red;
+            color: imports.$color-white;
+        }
+       } 
+    }
+  }
+}
