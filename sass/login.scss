@@ -1,4 +1,4 @@
-@use "imports";
+@use 'global';
 
 @mixin displayflex($direction, $align, $justify) {
   display: flex;
@@ -20,7 +20,7 @@ main {
     @include displayflex(column, center, space-around);
     height: 550px;
     width: 436px;
-    background-color: #fff;
+    background-color: global.$color-white;
     padding: 40px;
 
     img {
@@ -40,7 +40,7 @@ main {
       .value-input {
         padding: 10px 5px;
         margin: 10px 0;
-        border: 4px solid imports.$color-green;
+        border: 4px solid global.$color-green;
         border-radius: 6px;
       }
 
@@ -48,8 +48,8 @@ main {
         padding: 16px;
         border: none;
         border-radius: 60px;
-        background-color: imports.$color-green;
-        color: imports.$color-white;
+        background-color: global.$color-green;
+        color: global.$color-white;
 
         &:hover {
           cursor: pointer;
@@ -60,7 +60,7 @@ main {
     .panel-link {
       margin-top: 10px;
       text-decoration: none;
-      color: imports.$color-green;
+      color: global.$color-green;
     }
   }
 }

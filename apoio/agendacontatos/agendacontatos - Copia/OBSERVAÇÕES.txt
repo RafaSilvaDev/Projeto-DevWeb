@@ -1,0 +1,10 @@
+- No menu está sendo apresentada a foto do usuário logado. É o arquivo menu.php. Foi adicionado o include para conexão com a base, já que foi feito uma consulta SQL para capturar a foto do usuário.
+Neste exemplo não se usou a imagem do tipo blob. O banco de dados guarda um diretório fixo, que no caso é dentro do projeto PHP, pasta imagens/pessoas. Poderia se guardar também o diretório que se encontra a imagem, mas neste exemplo guardar em um campo varchar o nome da imagem, podendo ser qualquer tipo.
+Neste arquivo foi criado um css para arredondar a imagem do login, apenas para ficar mais estético e combinar com o template.
+
+- No arquivo bemvindo.php, mudou-se a mensagem inicial, apresentação do último acesso e um relógio analógico em javascript (verifiquem se funciona na máquina de vocês, talvez seja algo para habilitar no navegador). O JavaScript está externo na pasta js. É um script pronto, apenas foi inserido na página a partir da linha <script type="text/javascript" src="js/standardclock1.js"></script>.
+
+- No arquivo cadastro.php agora o usuário pode inserir uma foto do seu contato, seguindo a mesma ideia da foto do usuário, ou seja, armazena no banco apenas o nome da imagem. É importante que essa imagem fique armazenada na pasta imagens/pessoas. Novamente reforçando que neste exemplo está sendo utilizado um diretório fixo.
+
+- No arquivo inserircontato.php também é apresentada a imagem dos contatos.  
+

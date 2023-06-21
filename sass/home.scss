@@ -1,0 +1,74 @@
+@use 'global';
+
+@mixin displayflex($direction, $align, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+.banner {
+  box-shadow: inset 200px 200px 300px 200px rgba(0, 0, 0, 0.6);
+  background: url(../img/bg1.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
+  width: 100%;
+  padding: 130px 80px;
+  @include displayflex(column, flex-start, space-between);
+
+  .welcome,
+  .meet-us,
+  .info-text,
+  a {
+    color: global.$color-white;
+  }
+
+  .party-room {
+    color: global.$color-light-green;
+  }
+
+  .info-text{
+    max-width: 60%;
+  }
+
+  .reserve{
+    background-color: global.$color-light-green;
+    padding: 8px 30px;
+    border-radius: 15px;
+  }
+}
+
+.content{
+    width: 100%;
+    padding: 30px 80px;
+
+    h1{
+        width: 100%;
+        margin-bottom: 30px;
+        text-align: center;
+
+        span{
+            color: global.$color-light-green;
+        }
+    }
+
+    .pillars-list{
+        padding: 0px 80px;
+        @include displayflex(row, center, space-between);
+        flex-wrap: wrap;
+
+        .pillars-item{
+            @include displayflex(column, center, center);
+            img{
+              height: 100px;
+            }
+            h3{
+              margin-top: 10px;
+                color: global.$color-green;
+            }
+        }
+    }
+}
+

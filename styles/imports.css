@@ -5,8 +5,9 @@
 }
 
 header {
-  height: 80px !important;
+  height: 80px;
+  padding: 0 20px;
 }
 header img {
-  height: 40px;
+  height: 100%;
 }/*# sourceMappingURL=imports.css.map */

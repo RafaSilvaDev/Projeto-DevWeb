@@ -1,22 +1,57 @@
-$color-green: #1D4834;
-$color-white: #ffff;
+// Variable overrides first
+$primary: #900;
+$enable-shadows: true;
+$prefix: "mo-";
+
+// Then import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+$color-green: #1d4834;
+$color-white: #fff;
 $color-black: #000;
 $color-grey: #d9d9d9;
 $color-brown: #523f38;
 $color-yellow: #f0f66e;
 $color-orange: #f28123;
 $color-red: #ff0000;
+$color-light-green: #2ad000;
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header{
-    height: 80px;
-    padding: 0 20px;
+a {
+  text-decoration: none;
+}
+
+.reserve {
+  background-color: $color-light-green;
+  padding: 8px 30px;
+  border-radius: 15px;
+  color: $color-white;
+}
+
+header {
+  height: 80px;
+  width: 100%;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  img {
+    max-height: 100%;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 0 40px;
     img {
-        height: 90%;
+      height: 60%;
     }
+  }
 }

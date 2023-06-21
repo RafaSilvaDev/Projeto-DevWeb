@@ -4,10 +4,36 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
+.reserve {
+  background-color: #2ad000;
+  padding: 8px 30px;
+  border-radius: 15px;
+  color: #fff;
+}
+
 header {
   height: 80px;
-  padding: 0 20px;
+  width: 100%;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 header img {
-  height: 90%;
+  max-height: 100%;
+  margin: 10px 0;
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 0 40px;
+  }
+  header img {
+    height: 60%;
+  }
 }/*# sourceMappingURL=global.css.map */

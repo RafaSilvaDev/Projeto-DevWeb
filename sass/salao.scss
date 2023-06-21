@@ -1,4 +1,4 @@
-@use "imports";
+@use 'global';
 
 @mixin displayflex($direction, $align, $justify) {
   display: flex;
@@ -61,7 +61,7 @@ main {
         padding: 20px;
         border-radius: 16px;
         @include displayflex(column, center, center);
-        background-color: imports.$color-grey;
+        background-color: global.$color-grey;
 
         label,
         input{
@@ -77,12 +77,12 @@ main {
         #date {
             margin-bottom: 20px;
             padding: 0 10px;
-            border: 1px solid imports.$color-black;
+            border: 1px solid global.$color-black;
         }
 
         #btn-submit {
-            background-color: imports.$color-red;
-            color: imports.$color-white;
+            background-color: global.$color-red;
+            color: global.$color-white;
         }
        } 
     }
