@@ -13,13 +13,13 @@
     <main class="landing">
         <div class="login-container">
             <img src="../img/vector.png" alt="Natureza Viva Logo">
-            <form action="#" method="post" id="login-form">
-                <input class="value-input" type="text" name="name" placeholder="Nome completo" required>
-                <input class="value-input" type="text" name="user" placeholder="Usuário" required>
-                <input class="value-input" type="password" name="password" placeholder="Senha" required>
-                <input class="value-input" type="password" name="confirm-password" placeholder="Confirmar senha" required >
+            <form name="cadastro" method="POST" action="../php/SignUp.php" id="login-form">
+                <input class="value-input" type="text" name="campo-nome" placeholder="Nome completo" required>
+                <input class="value-input" type="text" name="campo-email" placeholder="Email" required>
+                <input class="value-input" type="password" name="campo-senha" placeholder="Senha" required>
+                <input class="value-input" type="password" name="campo-confirmar_senha" placeholder="Confirmar senha" required >
 
-                <input type="submit" name="submit" id="submit-btn" value="CADASTRAR" />
+                <input type="submit" id="submit-btn" value="CADASTRAR" />
             </form>
             <a href="../index.html" class="panel-link">Já possui uma conta? Entre</a>
         </div>

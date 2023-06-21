@@ -1,60 +1,25 @@
 <?php
-session_start();
+require 'config.php';
 
-// Verificar se o usuário está logado
-if (!isset($_SESSION['usuario_id']) || $_SESSION['usuario_tipo'] !== 'Proprietario') {
-    // Redirecionar para a página de login se não estiver logado como proprietário
-    header('Location: login.php');
-    exit();
-}
+$email = $_POST['campo-email'];
+$senha = $_POST['campo-senha'];
+$confirmarSenha = $_POST['campo-confirmar_senha'];
 
-// Verificar se o formulário de redefinição de senha foi enviado
-if (isset($_POST['submit'])) {
-    require 'config.php';
+if ($senha !== $confirmarSenha) {
+    echo '<script language="JavaScript" charset="utf-8">alert("As senhas não coincidem!")</script>';
+} else {
+    // Gerar o hash da nova senha
+    $senhaHash = base64_encode($senha);
 
-    $senha = $_POST['senha'];
-    $confirmarSenha = $_POST['confirmar_senha'];
+    // Atualizar a senha e definir o primeiro acesso como 0 (já que a senha foi redefinida)
+    $query = "UPDATE usuarios SET senha = '$senhaHash', primeiro_acesso = 0 WHERE email = '$email'";
+    $result = mysqli_query($conn, $query);
 
-    if ($senha !== $confirmarSenha) {
-        $erro = "As senhas não coincidem.";
+    if ($result) {
+        echo '<script language="JavaScript" charset="utf-8">alert("Logado com sucesso!")</script>';
+        echo '<meta HTTP-EQUIV="refresh" CONTENT="0; URL=../pages/Solicitacoes.html">';
     } else {
-        // Gerar o hash da nova senha
-        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
-
-        // Atualizar a senha e definir o primeiro acesso como 0 (já que a senha foi redefinida)
-        $usuarioId = $_SESSION['usuario_id'];
-        $query = "UPDATE usuarios SET senha = '$senhaHash', primeiro_acesso = 0 WHERE id = '$usuarioId'";
-        $result = mysqli_query($conn, $query);
-
-        if ($result) {
-            // Redirecionar para a página do proprietário
-            header('Location: proprietario.php');
-            exit();
-        } else {
-            $erro = "Erro ao redefinir a senha.";
-        }
+        echo '<script language="JavaScript" charset="utf-8">alert("Falha ao resetar senha. Tente novamente!")</script>';
+        echo '<meta HTTP-EQUIV="refresh" CONTENT="0; URL=../pages/Solicitacoes.html">';
     }
 }
-?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Redefinir Senha</title>
-</head>
-<body>
-    <h2>Redefinir Senha</h2>
-    <?php if (isset($erro)) { ?>
-        <p><?php echo $erro; ?></p>
-    <?php } ?>
-    <form method="POST" action="reset_senha.php">
-        <label>Nova Senha:</label>
-        <input type="password" name="senha" required><br><br>
-
-        <label>Confirmar Senha:</label>
-        <input type="password" name="confirmar_senha" required><br><br>
-
-        <input type="submit" name="submit" value="Redefinir Senha">
-    </form>
-</body>
-</html>

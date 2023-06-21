@@ -12,15 +12,14 @@
 <body>
     <main class="landing">
         <div class="login-container">
-            <!-- COLOCA A MSG DE ERRO PRA CADASTRO E LOGIN (TEM NOS ARQUIVOS PHP) -->
             <img src="./img/vector.png" alt="Natureza Viva Logo">
-            <form action="#" method="post" id="login-form">
-                <input class="value-input" type="text" name="user" placeholder="Usuário" required>
-                <input class="value-input" type="password" name="password" placeholder="Senha" required>
-                <select name="tipo-de-usuario" id="user-type" class="value-input" required>
+            <form action="./php/Login.php" method="post" id="login-form">
+                <input class="value-input" type="text" name="campo-email" placeholder="Email" required>
+                <input class="value-input" type="password" name="campo-senha" placeholder="Senha" required>
+                <select name="campo-tipo" id="user-type" class="value-input" required>
                     <option value="null" disabled selected>-- Selecione --</option>
-                    <option value="cli">Cliente</option>
-                    <option value="adm">Proptietário</option>
+                    <option value="cliente">Cliente</option>
+                    <option value="adm">Administrador</option>
                 </select>
 
                 <input type="submit" name="submit" id="submit-btn" value="LOG IN" />

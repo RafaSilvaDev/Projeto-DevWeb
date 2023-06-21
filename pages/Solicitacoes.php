@@ -24,6 +24,7 @@
         <img src="../img/vector.png" alt="Logo" />
       </a>
       <div class="links">
+        <a href="../php/logout.php" class="requests">Sair</a>
         <a href="./Solicitacoes.html" class="requests"
           >Acompanhar solicitações</a
         >
@@ -54,6 +55,10 @@
             </tr>
           </thead>
           <tbody>
+            <?php
+              require 'config.php';
+              
+            ?>
             <tr>
               <th scope="row">
                 <input
