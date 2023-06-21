@@ -15,56 +15,61 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="../styles/home.css" />
+    <link rel="stylesheet" href="../styles/solicitacoes.css" />
     <title>Natureza Viva | Solicitações</title>
   </head>
   <body>
     <header>
-      <img src="../img/vector.png" alt="Logo" />
-      <a href="#" class="reserve">Faça seu agendamento</a>
-    </header>
-    <main>
-      <div class="box">
-        <section class="off-table">
-          <a href="./Home.html">Voltar</a>
-          <h1>Solicitações</h1>
-          <div class="table-buttons">
-            <button>Confirmar selecionados</button>
-            <button>Reprovar selecionados</button>
-          </div>
-        </section>
-        <section class="table">
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
+      <a href="./Home.html" class="header-logo">
+        <img src="../img/vector.png" alt="Logo" />
+      </a>
+      <div class="links">
+        <a href="./Solicitacoes.html" class="requests"
+          >Acompanhar solicitações</a
+        >
+        <a href="./Salao.html" class="reserve">Faça seu agendamento</a>
       </div>
-    </main>
+    </header>
+    <form action="#" method="post" class="main-page">
+      <section class="off-table">
+        <a href="./Home.html" class="go-back">Voltar</a>
+        <h1>Solicitações</h1>
+        <div class="table-buttons">
+          <button type="submit" class="btn btn-light">
+            Confirmar selecionados
+          </button>
+          <button type="submit" class="btn btn-light">
+            Reprovar selecionados
+          </button>
+        </div>
+      </section>
+      <section class="table">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Selecionar</th>
+              <th scope="col">Data reserva</th>
+              <th scope="col">Locador</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+              </th>
+              <td>23/03/2023</td>
+              <td>Fernando Oliveira</td>
+              <td>Não confirmado</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </form>
   </body>
 </html>

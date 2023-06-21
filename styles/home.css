@@ -21,15 +21,29 @@ header {
   padding: 0 80px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
-header img {
+header .header-logo {
+  height: 80px;
+}
+header .header-logo img {
   max-height: 100%;
-  margin: 10px 0;
+}
+header .links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+header .links .requests {
+  margin-right: 20px;
 }
 
 @media (max-width: 700px) {
+  header {
+    padding: 0 40px;
+  }
   header img {
     height: 60%;
   }

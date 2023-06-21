@@ -1,0 +1,33 @@
+@use "global";
+
+.main-page {
+  width: 100%;
+  .off-table {
+    padding: 20px 80px;
+    .go-back {
+      color: global.$color-light-green;
+    }
+    h1 {
+      width: 100%;
+      text-align: center;
+    }
+    .table-buttons {
+      .btn-light {
+        background-color: global.$color-white;
+        border: 1px solid global.$color-gray;
+        margin: 0 10px;
+        &:hover {
+          background-color: global.$color-gray;
+        }
+      }
+    }
+  }
+
+  .table {
+    padding: 0 80px;
+    .table-hover {
+      th {
+      }
+    }
+  }
+}

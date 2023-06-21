@@ -47,4 +47,28 @@ header .links .requests {
   header img {
     height: 60%;
   }
-}/*# sourceMappingURL=global.css.map */
+}
+.main-page {
+  width: 100%;
+}
+.main-page .off-table {
+  padding: 20px 80px;
+}
+.main-page .off-table .go-back {
+  color: #2ad000;
+}
+.main-page .off-table h1 {
+  width: 100%;
+  text-align: center;
+}
+.main-page .off-table .table-buttons .btn-light {
+  background-color: #fff;
+  border: 1px solid #b1b1b1;
+  margin: 0 10px;
+}
+.main-page .off-table .table-buttons .btn-light:hover {
+  background-color: #b1b1b1;
+}
+.main-page .table {
+  padding: 0 80px;
+}/*# sourceMappingURL=solicitacoes.css.map */

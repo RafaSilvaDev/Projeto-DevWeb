@@ -9,9 +9,10 @@ a {
 }
 
 .reserve {
-  background-color: #ff0000;
+  background-color: #2ad000;
   padding: 8px 30px;
   border-radius: 15px;
+  color: #fff;
 }
 
 header {
@@ -20,13 +21,33 @@ header {
   padding: 0 80px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
-header img {
-  height: 100%;
+header .header-logo {
+  height: 80px;
+}
+header .header-logo img {
+  max-height: 100%;
+}
+header .links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+header .links .requests {
+  margin-right: 20px;
 }
 
+@media (max-width: 700px) {
+  header {
+    padding: 0 40px;
+  }
+  header img {
+    height: 60%;
+  }
+}
 main {
   margin: 10px 100px;
 }
@@ -89,7 +110,7 @@ main .about {
   justify-content: space-between;
   margin: 60px 0;
 }
-main .about .reserve form {
+main .about .reserve-form form {
   height: 200px;
   width: 300px;
   padding: 20px;
@@ -98,23 +119,23 @@ main .about .reserve form {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #d9d9d9;
+  background-color: #9c9c9c;
 }
-main .about .reserve form label,
-main .about .reserve form input {
+main .about .reserve-form form label,
+main .about .reserve-form form input {
   width: 100%;
 }
-main .about .reserve form input {
+main .about .reserve-form form input {
   height: 40px;
   border-radius: 16px;
   border: none;
 }
-main .about .reserve form #date {
+main .about .reserve-form form #date {
   margin-bottom: 20px;
   padding: 0 10px;
   border: 1px solid #000;
 }
-main .about .reserve form #btn-submit {
+main .about .reserve-form form #btn-submit {
   background-color: #ff0000;
-  color: white;
+  color: #fff;
 }/*# sourceMappingURL=salao.css.map */
