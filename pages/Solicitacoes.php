@@ -52,16 +52,32 @@ if (isset($_POST['reprovar'])) {
 </head>
 
 <body>
-  <header>
-    <a href="./Home.html" class="header-logo">
-      <img src="../img/vector.png" alt="Logo" />
-    </a>
-    <div class="links">
-      <a href="../php/logout.php" class="requests">Sair</a>
-      <a href="./Solicitacoes.html" class="requests">Acompanhar solicitações</a>
-      <a href="./Salao.html" class="reserve">Faça seu agendamento</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a href="./Home.html" class="header-logo navbar-brand">
+        <img src="../img/vector.png" height="80" alt="Logo" />
+      </a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="Home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./Solicitacoes.php">Acompanhar solicitações</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../php/logout.php">Sair</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link reserve" href="Salao.html">Faça seu agendamento</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </header>
+  </nav>
   <form action="#" method="post" class="main-page">
     <section class="off-table">
       <a href="./Home.html" class="go-back">Voltar</a>

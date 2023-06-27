@@ -9,6 +9,7 @@
 
 main {
   margin: 10px 100px;
+
   .title {
     padding: 18px 0;
   }
@@ -54,7 +55,7 @@ main {
   .img2 {
     grid-area: 11 / 1 / 8 / 5;
     background: url("../img/area-externa-salao.jpg");
-    height: 255px; /* Ajuste de altura */
+    height: 255px;
 
     @media screen and (max-width: 768px) {
       grid-area: auto;
