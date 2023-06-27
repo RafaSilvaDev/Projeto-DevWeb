@@ -8,7 +8,7 @@ $color-orange: #f28123;
 $color-red: #ff0000;
 $color-light-green: #2ad000;
 
-@import url('https://fonts.googleapis.com/css2?family=Ysabeau+Infant&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ysabeau+Infant&display=swap");
 
 @mixin displayflex($direction, $align, $justify) {
   display: flex;
@@ -21,80 +21,25 @@ $color-light-green: #2ad000;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Ysabeau Infant', sans-serif;
+  font-family: "Ysabeau Infant", sans-serif;
 }
 
 a {
   text-decoration: none;
 }
 
-.reserve {
-  background-color: $color-light-green;
-  padding: 8px 30px;
-  border-radius: 15px;
-  color: $color-white;
-}
 
-header {
-  height: 80px;
-  width: 100%;
-  padding: 0 80px;
-  @include displayflex(row, center, space-between);
-  .header-logo {
-    height: 80px;
-    img {
-      max-height: 100%;
+@media (min-width: 990px) {
+  .collapse .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    .nav-item .reserve {
+      background-color: $color-light-green;
+      padding: 8px 30px;
+      border-radius: 15px;
     }
-  }
-  .links {
-    @include displayflex(row, center, center);
-    .requests {
-      margin-right: 20px;
-    }
-  }
-  .mobile-dropdown {
-    display: none;
-    visibility: hidden;
-  }
-}
-
-@media (max-width: 800px) {
-  header {
-    padding: 0 40px;
-    img {
-      height: 60%;
-    }
-    .links {
-      display: none;
-      visibility: hidden;
-    }
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    
-    .dropdown-header {
-      cursor: pointer;
-    }
-    
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
-    
-    .dropdown-content a {
-      display: block;
-      padding: 10px;
-      text-decoration: none;
-      color: #333;
-    }
-    
-    .dropdown-content a:hover {
-      background-color: #f1f1f1;
-    }    
   }
 }

@@ -4,29 +4,62 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="../styles/home.css" />
     <title>Natureza Viva | Home</title>
   </head>
   <body>
-    <header>
-      <a href="./Home.html" class="header-logo">
-        <img src="../img/vector.png" alt="Logo" />
-      </a>
-      <div class="links">
-        <a href="../php/logout.php" class="requests">Sair</a>
-        <a href="./Solicitacoes.html" class="requests">Acompanhar solicitações</a>
-        <a href="./Salao.html" class="reserve">Faça seu agendamento</a>
-      </div>
-      <div class="mobile-dropdown">
-        <div class="dropdown-header" onclick="toggleDropdown()">Menu</div>
-        <div class="dropdown-content" id="dropdown-content">
-          <a href="../php/logout.php" class="requests">Sair</a>
-          <a href="./Solicitacoes.html" class="requests">Acompanhar solicitações</a>
-          <a href="./Salao.html" class="reserve">Faça seu agendamento</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="./Home.html" class="header-logo navbar-brand">
+          <img src="../img/vector.png" height="80" alt="Logo" />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="Home.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Solicitacoes.php"
+                >Acompanhar solicitações</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../php/logout.php">Sair</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link reserve" href="Salao.html"
+                >Faça seu agendamento</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
-    </header>
-    
+    </nav>
+
     <main>
       <section class="banner">
         <p class="welcome">Bem vindo!</p>
@@ -61,6 +94,5 @@
         </div>
       </section>
     </main>
-    <script src="../js/script.js"></script>
   </body>
 </html>

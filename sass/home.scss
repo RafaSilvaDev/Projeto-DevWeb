@@ -8,7 +8,7 @@
 }
 
 .banner {
-  box-shadow: inset 200px 200px 300px 200px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 200px 200px 300px 200px rgba(0, 0, 0, 0.5);
   background: url(../img/bg1.png);
   background-position: center;
   background-size: cover;
@@ -36,7 +36,7 @@
   .reserve{
     background-color: global.$color-light-green;
     padding: 8px 30px;
-    border-radius: 15px;
+    border-radius: 15px
   }
 }
 
@@ -75,5 +75,7 @@
 @media (max-width: 800px) {
   .banner {
     @include displayflex(column, center, space-between);
+    height: 600px;
+    padding: 80px 40px;
   }
 }
