@@ -52,7 +52,7 @@ header {
       margin-right: 20px;
     }
   }
-  nav {
+  .mobile-dropdown {
     display: none;
     visibility: hidden;
   }
@@ -68,9 +68,33 @@ header {
       display: none;
       visibility: hidden;
     }
-    nav {
-      display: flex;
-      visibility: visible;
+    .dropdown {
+      position: relative;
+      display: inline-block;
     }
+    
+    .dropdown-header {
+      cursor: pointer;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #333;
+    }
+    
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }    
   }
 }

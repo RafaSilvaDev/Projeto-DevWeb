@@ -1,3 +1,43 @@
+<?php
+require '../php/config.php';
+$reservesId = array();
+
+$query = "SELECT reserva.id as idreserva, reserva.data_reserva, reserva.confirmada, reserva.locador, usuario.id, usuario.nome FROM reserva INNER JOIN usuario ON reserva.locador = usuario.id";
+$result = mysqli_query($conn, $query);
+
+while ($row = mysqli_fetch_assoc($result)) {
+  array_push($reservesId, $row["idreserva"]);
+}
+
+if (isset($_POST['confirmar'])) {
+  $selecionados = $_POST['selecionados'];
+
+  foreach ($selecionados as $id) {
+    if (in_array($id, $reservesId)) {
+      $queryConfirmar = "UPDATE reserva SET confirmada = 1 WHERE id = $id";
+      mysqli_query($conn, $queryConfirmar);
+    }
+  }
+
+  echo '<script language="JavaScript" charset="utf-8">alert("Reservas aprovadas!")</script>';
+  echo '<meta HTTP-EQUIV="refresh" CONTENT="0; URL=../pages/Solicitacoes.php">';
+}
+
+if (isset($_POST['reprovar'])) {
+  $selecionados = $_POST['selecionados'];
+
+  foreach ($selecionados as $id) {
+    if (in_array($id, $reservesId)) {
+      $queryExcluir = "DELETE FROM reserva WHERE id = $id";
+      mysqli_query($conn, $queryExcluir);
+    }
+  }
+
+  echo '<script language="JavaScript" charset="utf-8">alert("Reservas reprovadas e excluídas!")</script>';
+  echo '<meta HTTP-EQUIV="refresh" CONTENT="0; URL=../pages/Solicitacoes.php">';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -27,10 +67,10 @@
       <a href="./Home.html" class="go-back">Voltar</a>
       <h1>Solicitações</h1>
       <div class="table-buttons">
-        <button type="submit" class="btn btn-light">
+        <button type="submit" class="btn btn-light" name="confirmar">
           Confirmar selecionados
         </button>
-        <button type="submit" class="btn btn-light">
+        <button type="submit" class="btn btn-light" name="reprovar">
           Reprovar selecionados
         </button>
       </div>
@@ -47,22 +87,20 @@
         </thead>
         <tbody>
           <?php
-          require '../php/config.php';
-
-          $query = "SELECT * FROM reserva";
+          $query = "SELECT reserva.id as idreserva, reserva.data_reserva, reserva.confirmada, reserva.locador, usuario.id, usuario.nome FROM reserva INNER JOIN usuario ON reserva.locador = usuario.id";
           $result = mysqli_query($conn, $query);
 
-          for ($i = 0; $i < mysqli_num_rows($result); $i++) {
-            echo `
+          while ($row = mysqli_fetch_assoc($result)) {
+            echo '
               <tr>
                 <th scope="row">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                <input class="form-check-input" type="checkbox" name="selecionados[]" value="' . $row["idreserva"] . '" id="flexCheckDefault" />
                 </th>
-                <td>23/03/2023</td>
-                <td>Fernando Oliveira</td>
-                <td>Não confirmado</td>
+                <td>' . $row["data_reserva"] . '</td>
+                <td>' . $row["nome"] . '</td>
+                <td>' . ($row["confirmada"] == 0 ? "Não confirmada" : "Confirmada") . '</td>
               </tr>
-              `;
+            ';
           }
           ?>
         </tbody>

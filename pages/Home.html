@@ -4,52 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-      crossorigin="anonymous"
-    ></script>
     <link rel="stylesheet" href="../styles/home.css" />
     <title>Natureza Viva | Home</title>
   </head>
   <body>
-    <!-- <header>
+    <header>
       <a href="./Home.html" class="header-logo">
         <img src="../img/vector.png" alt="Logo" />
       </a>
       <div class="links">
         <a href="../php/logout.php" class="requests">Sair</a>
-        <a href="./Solicitacoes.html" class="requests"
-          >Acompanhar solicitações</a
-        >
+        <a href="./Solicitacoes.html" class="requests">Acompanhar solicitações</a>
         <a href="./Salao.html" class="reserve">Faça seu agendamento</a>
       </div>
-      <nav class="mobile">
-        <a href="../php/logout.php" class="requests">Sair</a>
-        <a href="./Solicitacoes.html" class="requests"
-          >Acompanhar solicitações</a
-        >
-        <a href="./Salao.html" class="reserve">Faça seu agendamento</a>
-      </nav>
-    </header> -->
-    <nav class="navbar bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img
-            src="../img/vector.png"
-            alt="Logo"
-            height="60"
-            class="d-inline-block align-text-top"
-          />
-        </a>
+      <div class="mobile-dropdown">
+        <div class="dropdown-header" onclick="toggleDropdown()">Menu</div>
+        <div class="dropdown-content" id="dropdown-content">
+          <a href="../php/logout.php" class="requests">Sair</a>
+          <a href="./Solicitacoes.html" class="requests">Acompanhar solicitações</a>
+          <a href="./Salao.html" class="reserve">Faça seu agendamento</a>
+        </div>
       </div>
-    </nav>
+    </header>
+    
     <main>
       <section class="banner">
         <p class="welcome">Bem vindo!</p>
@@ -60,7 +37,7 @@
           inesquecíveis em nosso salão de festas. Faça já a sua reserva e seja
           parte de eventos memoráveis!
         </p>
-        <a href="#" class="reserve">Faça seu agendamento</a>
+        <a href="./Salao.html" class="reserve">Faça seu agendamento</a>
       </section>
       <section class="content">
         <h1>Seja bem vindo ao <span>Natureza Viva</span></h1>
@@ -84,5 +61,6 @@
         </div>
       </section>
     </main>
+    <script src="../js/script.js"></script>
   </body>
 </html>
