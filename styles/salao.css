@@ -119,7 +119,7 @@ main .about .reserve-form form {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #9c9c9c;
+  background-color: #b1b1b1;
 }
 main .about .reserve-form form label,
 main .about .reserve-form form input {

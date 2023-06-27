@@ -1,4 +1,4 @@
-@use 'global';
+@use "global";
 
 @mixin displayflex($direction, $align, $justify) {
   display: flex;
@@ -21,13 +21,16 @@ main {
     height: 550px;
     width: 436px;
     background-color: global.$color-white;
+    border-radius: 15px;
     padding: 40px;
 
     img {
       height: 100px;
     }
 
-    #login-form {
+    #login-form,
+    #register-form,
+    #reset-form {
       @include displayflex(column, center, space-evenly);
       height: 200px;
       width: 100%;
@@ -56,7 +59,7 @@ main {
         }
       }
     }
-    
+
     .panel-link {
       margin-top: 10px;
       text-decoration: none;
@@ -70,6 +73,7 @@ main {
     .login-container {
       width: 100vw;
       height: 100vh;
+      border-radius: 0;
 
       img {
         height: 100px;

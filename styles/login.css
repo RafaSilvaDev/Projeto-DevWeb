@@ -9,9 +9,10 @@ a {
 }
 
 .reserve {
-  background-color: #ff0000;
+  background-color: #2ad000;
   padding: 8px 30px;
   border-radius: 15px;
+  color: #fff;
 }
 
 header {
@@ -20,13 +21,33 @@ header {
   padding: 0 80px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
-header img {
-  height: 100%;
+header .header-logo {
+  height: 80px;
+}
+header .header-logo img {
+  max-height: 100%;
+}
+header .links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+header .links .requests {
+  margin-right: 20px;
 }
 
+@media (max-width: 700px) {
+  header {
+    padding: 0 40px;
+  }
+  header img {
+    height: 60%;
+  }
+}
 main {
   display: flex;
   flex-direction: column;
@@ -46,13 +67,16 @@ main .login-container {
   justify-content: space-around;
   height: 550px;
   width: 436px;
-  background-color: global.$color-white;
+  background-color: #fff;
+  border-radius: 15px;
   padding: 40px;
 }
 main .login-container img {
   height: 100px;
 }
-main .login-container #login-form {
+main .login-container #login-form,
+main .login-container #register-form,
+main .login-container #reset-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,23 +85,33 @@ main .login-container #login-form {
   width: 100%;
 }
 main .login-container #login-form .value-input,
-main .login-container #login-form #submit-btn {
+main .login-container #login-form #submit-btn,
+main .login-container #register-form .value-input,
+main .login-container #register-form #submit-btn,
+main .login-container #reset-form .value-input,
+main .login-container #reset-form #submit-btn {
   width: 100%;
 }
-main .login-container #login-form .value-input {
+main .login-container #login-form .value-input,
+main .login-container #register-form .value-input,
+main .login-container #reset-form .value-input {
   padding: 10px 5px;
   margin: 10px 0;
   border: 4px solid #1d4834;
   border-radius: 6px;
 }
-main .login-container #login-form #submit-btn {
+main .login-container #login-form #submit-btn,
+main .login-container #register-form #submit-btn,
+main .login-container #reset-form #submit-btn {
   padding: 16px;
   border: none;
   border-radius: 60px;
   background-color: #1d4834;
-  color: white;
+  color: #fff;
 }
-main .login-container #login-form #submit-btn:hover {
+main .login-container #login-form #submit-btn:hover,
+main .login-container #register-form #submit-btn:hover,
+main .login-container #reset-form #submit-btn:hover {
   cursor: pointer;
 }
 main .login-container .panel-link {
@@ -90,6 +124,7 @@ main .login-container .panel-link {
   main .login-container {
     width: 100vw;
     height: 100vh;
+    border-radius: 0;
   }
   main .login-container img {
     height: 100px;

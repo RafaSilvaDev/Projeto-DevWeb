@@ -39,12 +39,24 @@ header .links {
 header .links .requests {
   margin-right: 20px;
 }
+header nav {
+  display: none;
+  visibility: hidden;
+}
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   header {
     padding: 0 40px;
   }
   header img {
     height: 60%;
+  }
+  header .links {
+    display: none;
+    visibility: hidden;
+  }
+  header nav {
+    display: flex;
+    visibility: visible;
   }
 }/*# sourceMappingURL=global.css.map */
