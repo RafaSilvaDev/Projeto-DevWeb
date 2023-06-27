@@ -8,6 +8,8 @@ $color-orange: #f28123;
 $color-red: #ff0000;
 $color-light-green: #2ad000;
 
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+Infant&display=swap');
+
 @mixin displayflex($direction, $align, $justify) {
   display: flex;
   flex-direction: $direction;
@@ -19,6 +21,7 @@ $color-light-green: #2ad000;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Ysabeau Infant', sans-serif;
 }
 
 a {
