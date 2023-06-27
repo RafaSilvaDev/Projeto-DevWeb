@@ -17,11 +17,20 @@ main {
   .pictures {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(6, 1fr);
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     height: 500px;
     width: 100%;
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+      grid-row-gap: 20px;
+      height: auto;
+    }
+
+    @media screen and (max-width: 480px) {
+      grid-row-gap: 10px;
+    }
   }
 
   @for $img from 1 to 5 {
@@ -34,57 +43,89 @@ main {
   }
 
   .img1 {
-    grid-area: 1 / 1 / 7 / 5;
+    grid-area: 1 / 1 / 8 / 9;
     background: url("../img/vista-salao.jpg");
-  }
-  .img2 {
-    grid-area: 1 / 5 / 4 / 9;
-    background: url("../img/area-externa-salao.jpg");
-  }
-  .img3 {
-    grid-area: 4 / 5 / 7 / 7;
-    background: url("../img/sala-privativa-salao.jpg");
-  }
-  .img4 {
-    grid-area: 4 / 7 / 7 / 9;
-    background: url("../img/mesa-salao.jpg");
+
+    @media screen and (max-width: 768px) {
+      grid-area: auto;
+      height: 400px;
+    }
   }
 
-  .about{
+  .img2 {
+    grid-area: 11 / 1 / 8 / 5;
+    background: url("../img/area-externa-salao.jpg");
+    height: 255px; /* Ajuste de altura */
+
+    @media screen and (max-width: 768px) {
+      grid-area: auto;
+    }
+  }
+
+  .img3 {
+    grid-area: 11 / 5 / 8 / 7;
+    background: url("../img/sala-privativa-salao.jpg");
+    height: 255px; /* Ajuste de altura */
+
+    @media screen and (max-width: 768px) {
+      grid-area: auto;
+    }
+  }
+
+  .img4 {
+    grid-area: 11 / 7 / 8 / 9;
+    background: url("../img/mesa-salao.jpg");
+    height: 255px; /* Ajuste de altura */
+
+    @media screen and (max-width: 768px) {
+      grid-area: auto;
+    }
+  }
+
+  .about {
     @include displayflex(row, start, space-between);
     margin: 60px 0;
 
-    .reserve-form{
-       form {
+    .reserve-form {
+      width: 50%;
+      padding-left: 20px;
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        padding-left: 0;
+        margin-top: 20px;
+      }
+
+      form {
         height: 200px;
-        width: 300px;
+        width: 100%;
         padding: 20px;
         border-radius: 16px;
         @include displayflex(column, center, center);
         background-color: global.$color-gray;
 
         label,
-        input{
-            width: 100%;
+        input {
+          width: 100%;
         }
 
-        input{
-            height: 40px;
-            border-radius: 16px;
-            border: none;
+        input {
+          height: 40px;
+          border-radius: 16px;
+          border: none;
         }
 
         #date {
-            margin-bottom: 20px;
-            padding: 0 10px;
-            border: 1px solid global.$color-black;
+          margin-bottom: 20px;
+          padding: 0 10px;
+          border: 1px solid global.$color-black;
         }
 
         #btn-submit {
-            background-color: global.$color-red;
-            color: global.$color-white;
+          background-color: global.$color-red;
+          color: global.$color-white;
         }
-       } 
+      }
     }
   }
 }
